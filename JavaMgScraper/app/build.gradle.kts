@@ -22,11 +22,12 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
-    implementation(fileTree("libs"))
+    // implementation(fileTree("libs"))
     implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", "1.10.2")
     implementation("com.squareup.okhttp3", "okhttp", "5.3.2")
     implementation("com.squareup.okhttp3", "okhttp-coroutines", "5.3.2")
     implementation("org.jsoup", "jsoup", "1.22.1")
+    implementation("com.google.code.gson", "gson", "2.13.2")
     implementation(kotlin("stdlib-jdk8"))
 }
 

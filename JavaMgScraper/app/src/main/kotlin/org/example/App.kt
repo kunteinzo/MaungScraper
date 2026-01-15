@@ -1,5 +1,6 @@
 package org.example
 
+import com.google.gson.Gson
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -7,6 +8,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.jsoup.Jsoup
 import kotlin.system.exitProcess
+import java.io.*
 
 
 fun main() {
@@ -47,7 +49,16 @@ fun main() {
     }*/
 
     runBlocking {
-        println("1. "+Xnxx().search(""))
-        println("2. "+Xnxx().search(""))
+        val file = File("test.json")
+        if (file.exists().not()) file.createNewFile()
+        val fos = FileOutputStream(file)
+        fos.write(
+            Gson().toJson(Xnxx().search("japan")).toByteArray()
+        )
+        fos.close()
+        
+        // println("2. "+Xnxx().search("korea"))
     }
+    
+    // println(arrayOf("Item", "Item 1"))
 }

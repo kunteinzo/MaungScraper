@@ -15,41 +15,59 @@ class Xnxx {
     }
 
     private val client = OkHttpClient.Builder().build()
-    suspend fun search(query: String): String = coroutineScope {
-        client.newCall(
+    suspend fun search(query: String): HashMap<String, *> = coroutineScope {
+        val list = hashMapOf(
+            "code" to 200,
+            "pages" to 0,
+            "data" to arrayListOf<HashMap<String, String>>()
+        )
+        val rp = client.newCall(
             Request.Builder()
                 .url("${BASE_URL}search/$query")
+                .addHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.32 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.32")
                 .build()
-        ).execute().use { rp ->
-            // TODO: fix here
+        ).execute()
+            // TODO: fix here, can't use closable use extension function
             if (rp.isSuccessful) {
-                Jsoup.parse(rp.body.string()).use { root ->
-                    var pages = 0
+                list["code"] = rp.code
+                Jsoup.parse(rp.body.string()).let { root ->
                     root.select(".thumb-block").forEach { block ->
-                        val id = block["data-id"]
+                        val id = block.attr("data-id")
+                        val b = hashMapOf(
+                            "mk_name" to "Empty",
+                            "mk_link" to "Empty",
+                            "title" to "No Title",
+                            "link" to "",
+                            "thumb" to "",
+                            "sfw_thumb" to "",
+                            "short_prev" to "",
+                            "thumb_list" to ""
+                        )
                         block.getElementsByAttributeValueStarting("href", "/porn-maker/").forEach { maker ->
-                            println("Maker name: "+maker.text().trim())
-                            println("Maker url: "+maker.attr("href"))
+                            b["mk_name"] = maker.text().trim()
+                            b["mk_link"] = maker.attr("href")
                         }
                         block.getElementsByAttribute("title").forEach { video ->
-                            println("Title: " + video.attr("title"))
-                            println("Url: " + video.attr("href"))
+                            b["title"] = video.attr("title")
+                            b["link"] = video.attr("href")
                         }
                         block.getElementById("pic_$id")?.let {
-                            println("Src: "+it.attr("data-src"))
-                            println("SFWSrc: "+it.attr("data-sfwthumb"))
-                            println("Pvv: "+it.attr("data-pvv"))
-                            println("mzl: "+it.attr("data-mzl"))
+                            b["thumb"] = it.attr("data-src")
+                            b["sfw_thumb"] = it.attr("data-sfwthumb")
+                            b["short_prev"] = it.attr("data-pvv")
+                            b["thumb_list"] = it.attr("data-mzl")
                         }
+                        
+                        (list["data"] as ArrayList<HashMap<String, String>>).add(b)
                     }
                     root.selectFirst(".pagination")?.selectFirst(".last-page")?.attr("href")?.let {
-                        pages = it.substring(it.lastIndexOf("/")+1).toIntOrNull() ?: 0
+                        list["pages"] = it.substring(it.lastIndexOf("/")+1).toIntOrNull() ?: 0
                     }
-                    println("Total Pages: $pages")
-                    return@coroutineScope "${rp.code}"
+                    println("Total Pages: ${list["pages"]}")
                 }
+            } else {
+                list["code"] = rp.code
             }
-        }
-        return@coroutineScope "Empty"
+        return@coroutineScope list
     }
 }
