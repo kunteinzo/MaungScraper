@@ -22,6 +22,9 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
+    implementation(fileTree("libs"))
+    implementation("com.squareup.okhttp3", "okhttp", "5.3.2")
+    implementation("org.jsoup", "jsoup", "1.22.1")
 }
 
 testing {
