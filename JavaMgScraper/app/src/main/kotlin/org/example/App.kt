@@ -1,5 +1,11 @@
 package org.example
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.jsoup.Jsoup
@@ -8,7 +14,7 @@ import kotlin.system.exitProcess
 
 fun main() {
     println("hello")
-    var pages = 0
+    /*var pages = 0
     val client = OkHttpClient.Builder().build()
     val request = Request.Builder()
         .url("https://www.xnxx.com/best")
@@ -41,5 +47,10 @@ fun main() {
             println("Total Pages: $pages")
         }
         exitProcess(0)
+    }*/
+
+    runBlocking {
+        println("1. "+Xnxx().search(""))
+        println("2. "+Xnxx().search(""))
     }
 }
