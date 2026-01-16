@@ -31,7 +31,12 @@ import java.io.*
 
 fun main() {
     println("hello")
-    /*var pages = 0
+    runBlocking {
+        println(Xnxx().search("japan"))
+        // println(Xnxx().xnxx())
+    }
+    exitProcess(0)
+    var pages = 0
     val client = OkHttpClient.Builder().build()
     val request = Request.Builder()
         .url("https://www.xnxx.com/best")
@@ -64,19 +69,5 @@ fun main() {
             println("Total Pages: $pages")
         }
         exitProcess(0)
-    }*/
-
-    runBlocking {
-        val file = File("test.json")
-        if (file.exists().not()) file.createNewFile()
-        val fos = FileOutputStream(file)
-        fos.write(
-            Gson().toJson(Xnxx().search("japan")).toByteArray()
-        )
-        fos.close()
-        
-        // println("2. "+Xnxx().search("korea"))
     }
-    
-    // println(arrayOf("Item", "Item 1"))
 }

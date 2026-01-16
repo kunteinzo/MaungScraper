@@ -26,66 +26,62 @@ import okhttp3.Request
 import okhttp3.Response
 import okhttp3.coroutines.executeAsync
 import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 
 class Xnxx {
     companion object {
         private const val BASE_URL = "https://www.xnxx.com/"
     }
 
-    private val client = OkHttpClient.Builder().build()
-    suspend fun search(query: String): HashMap<String, *> = coroutineScope {
-        val list = hashMapOf(
-            "code" to 200,
-            "pages" to 0,
-            "data" to arrayListOf<HashMap<String, String>>()
-        )
-        val rp = client.newCall(
+    suspend fun search(query: String) = coroutineScope {
+        val xnxxResp = XnxxResponse()
+        OkHttpClient.Builder().build().newCall(
             Request.Builder()
                 .url("${BASE_URL}search/$query")
                 .addHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.32 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.32")
                 .build()
-        ).execute()
-            // TODO: fix here, can't use closable use extension function
+        ).execute().use { rp ->
             if (rp.isSuccessful) {
-                list["code"] = rp.code
-                Jsoup.parse(rp.body.string()).let { root ->
+                val array = arrayListOf<XnxxVideo>()
+                val root = Jsoup.parse(rp.body.string())
                     root.select(".thumb-block").forEach { block ->
                         val id = block.attr("data-id")
-                        val b = hashMapOf(
-                            "mk_name" to "Empty",
-                            "mk_link" to "Empty",
-                            "title" to "No Title",
-                            "link" to "",
-                            "thumb" to "",
-                            "sfw_thumb" to "",
-                            "short_prev" to "",
-                            "thumb_list" to ""
-                        )
+                        val xnxx = XnxxVideo()
                         block.getElementsByAttributeValueStarting("href", "/porn-maker/").forEach { maker ->
-                            b["mk_name"] = maker.text().trim()
-                            b["mk_link"] = maker.attr("href")
+                            xnxx.makerName = maker.text().trim()
+                            xnxx.makerLink = maker.attr("href")
                         }
                         block.getElementsByAttribute("title").forEach { video ->
-                            b["title"] = video.attr("title")
-                            b["link"] = video.attr("href")
+                            xnxx.title = video.attr("title")
+                            xnxx.link = video.attr("href")
                         }
                         block.getElementById("pic_$id")?.let {
-                            b["thumb"] = it.attr("data-src")
-                            b["sfw_thumb"] = it.attr("data-sfwthumb")
-                            b["short_prev"] = it.attr("data-pvv")
-                            b["thumb_list"] = it.attr("data-mzl")
+                            xnxx.thumb = it.attr("data-src")
+                            xnxx.sfwThumb = it.attr("data-sfwthumb")
+                            xnxx.shortPrev = it.attr("data-pvv")
+                            xnxx.mzlThumb = it.attr("data-mzl")
                         }
                         
-                        (list["data"] as ArrayList<HashMap<String, String>>).add(b)
+                        array.add(xnxx)
                     }
                     root.selectFirst(".pagination")?.selectFirst(".last-page")?.attr("href")?.let {
-                        list["pages"] = it.substring(it.lastIndexOf("/")+1).toIntOrNull() ?: 0
+                        xnxxResp.pages = it.substring(it.lastIndexOf("/")+1).toIntOrNull() ?: 0
                     }
-                    println("Total Pages: ${list["pages"]}")
-                }
-            } else {
-                list["code"] = rp.code
+                
+                xnxxResp.list = array
             }
-        return@coroutineScope list
+            return@use xnxxResp
+        }
+    }
+    
+    suspend fun xnxx() = coroutineScope {
+        OkHttpClient.Builder().build()
+            .newCall(
+                Request.Builder()
+                    .url("https://api.ipify.org")
+                    .build()
+            ).execute().use { root ->
+                return@coroutineScope root.code
+            }
     }
 }
