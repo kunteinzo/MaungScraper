@@ -18,56 +18,13 @@
 
 package org.example
 
-import com.google.gson.Gson
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import org.jsoup.Jsoup
-import kotlin.system.exitProcess
-import java.io.*
 
 
 fun main() {
     println("hello")
     runBlocking {
-        println(Xnxx().search("japan"))
-        // println(Xnxx().xnxx())
-    }
-    exitProcess(0)
-    var pages = 0
-    val client = OkHttpClient.Builder().build()
-    val request = Request.Builder()
-        .url("https://www.xnxx.com/best")
-        .build()
-    client.newCall(request).execute().use { response ->
-        println(response.code)
-        if (response.isSuccessful) {
-            val root = Jsoup.parse(response.body.string())
-            root.select(".thumb-block").forEach { block ->
-                val id = block.attr("data-id")
-                println(id)
-                block.getElementsByAttributeValueStarting("href", "/porn-maker").forEach { maker ->
-                    println("Maker name: "+maker.text())
-                    println("Maker url: "+maker.attr("href"))
-                }
-                block.getElementsByAttribute("title").forEach { video ->
-                    println("Title: " + video.attr("title"))
-                    println("Url: " + video.attr("href"))
-                }
-                block.getElementById("pic_$id")?.let {
-                    println("Src: "+it.attr("data-src"))
-                    println("SFWSrc: "+it.attr("data-sfwthumb"))
-                    println("Pvv: "+it.attr("data-pvv"))
-                    println("mzl: "+it.attr("data-mzl"))
-                }
-            }
-            root.selectFirst(".pagination")?.selectFirst(".last-page")?.attr("href")?.let {
-                pages = it.substring(it.lastIndexOf("/")+1).toIntOrNull() ?: 0
-            }
-            println("Total Pages: $pages")
-        }
-        exitProcess(0)
+        //println(Xnxx().search("japan"))
+        println(Xnxx().watch("/video-qp2nnb9/hot_japan_girl_riisa_minami_fuck_and_receive_jizz"))
     }
 }

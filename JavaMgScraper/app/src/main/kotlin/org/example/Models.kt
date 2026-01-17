@@ -18,6 +18,8 @@
 
 package org.example
 
+import com.google.gson.annotations.SerializedName
+
 data class XnxxVideo(
     var title: String = "No Title",
     var link: String = "",
@@ -29,7 +31,29 @@ data class XnxxVideo(
     var makerLink: String = ""
 )
 
+data class XnxxWatch(
+    var title: String = "No Title"
+)
+
+// TODO: finish this
+data class XnxxRelated(
+    var id: Long,
+    @SerializedName("t")
+    var title: String,
+    @SerializedName("u")
+    var url: String,
+    @SerializedName("d")
+    var duration: String,
+    @SerializedName("r")
+    var rating: String,
+    @SerializedName("pn")
+    var makerName: String,
+    @SerializedName("pu")
+    var makerLink: String,
+)
+
 data class XnxxResponse(
     var pages: Int = 0,
+    var message: String = "",
     var list: List<XnxxVideo> = listOf()
 )
