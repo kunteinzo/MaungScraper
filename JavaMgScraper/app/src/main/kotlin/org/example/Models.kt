@@ -1,5 +1,5 @@
 /*
-* As its name = "", it scrape some stuff.
+* As its name, it scrape some stuff.
 * Copyright (C) 2026  kunteinzo
 * 
 * This program is free software: you can redistribute it and/or modify
