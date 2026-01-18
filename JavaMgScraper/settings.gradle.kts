@@ -12,4 +12,4 @@ plugins {
 }
 
 rootProject.name = "JavaMgScraper"
-include("app")
+include("app", "libscrape")

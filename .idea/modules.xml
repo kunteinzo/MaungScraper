@@ -6,6 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/JavaMgScraper.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/JavaMgScraper.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/JavaMgScraper.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/JavaMgScraper.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/JavaMgScraper.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/JavaMgScraper.app.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libscrape/JavaMgScraper.libscrape.iml" filepath="$PROJECT_DIR$/.idea/modules/libscrape/JavaMgScraper.libscrape.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libscrape/JavaMgScraper.libscrape.main.iml" filepath="$PROJECT_DIR$/.idea/modules/libscrape/JavaMgScraper.libscrape.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libscrape/JavaMgScraper.libscrape.test.iml" filepath="$PROJECT_DIR$/.idea/modules/libscrape/JavaMgScraper.libscrape.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/MaungScraper.iml" filepath="$PROJECT_DIR$/MaungScraper.iml" />
       <module fileurl="file://$PROJECT_DIR$/PyMgScraper/PyMgScraper.iml" filepath="$PROJECT_DIR$/PyMgScraper/PyMgScraper.iml" />
     </modules>

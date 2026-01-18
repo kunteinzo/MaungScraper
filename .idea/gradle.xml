@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$/JavaMgScraper" />
             <option value="$PROJECT_DIR$/JavaMgScraper/app" />
+            <option value="$PROJECT_DIR$/JavaMgScraper/libscrape" />
           </set>
         </option>
       </GradleProjectSettings>

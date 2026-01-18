@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":app:main" external.linked.project.path="$MODULE_DIR$/../../../JavaMgScraper/app" external.root.project.path="$MODULE_DIR$/../../../JavaMgScraper" external.system.id="GRADLE" external.system.module.group="JavaMgScraper" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":libscrape:test" external.linked.project.path="$MODULE_DIR$/../../../JavaMgScraper/libscrape" external.root.project.path="$MODULE_DIR$/../../../JavaMgScraper" external.system.id="GRADLE" external.system.module.group="JavaMgScraper" external.system.module.type="sourceSet" external.system.module.version="1.0-alpha" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet external-system-id="GRADLE" type="kotlin-language" name="Kotlin">
-      <configuration version="5" platform="JVM 21" allPlatforms="JVM [21]" useProjectSettings="false" pureKotlinSourceFolders="$MODULE_DIR$/../../../JavaMgScraper/app/src/test/kotlin;/home/kunteinzo/IdeaProjects/MaungScraper/JavaMgScraper/app/src/main/kotlin">
+      <configuration version="5" platform="JVM 21" allPlatforms="JVM [21]" useProjectSettings="false" pureKotlinSourceFolders="$MODULE_DIR$/../../../JavaMgScraper/libscrape/src/test/kotlin;/home/kunteinzo/IdeaProjects/MaungScraper/JavaMgScraper/libscrape/src/main/kotlin">
+        <additionalVisibleModuleNames>:libscrape:main</additionalVisibleModuleNames>
         <compilerSettings />
         <compilerArguments>
           <flagArguments>
@@ -11,9 +12,9 @@
             <flagArg name="noStdlib" arg="true" />
           </flagArguments>
           <stringArguments>
-            <stringArg name="destination" arg="$MODULE_DIR$/../../../JavaMgScraper/app/build/classes/kotlin/main" />
+            <stringArg name="destination" arg="$MODULE_DIR$/../../../JavaMgScraper/libscrape/build/classes/kotlin/test" />
             <stringArg name="jvmTarget" arg="21" />
-            <stringArg name="moduleName" arg="app" />
+            <stringArg name="moduleName" arg="libscrape_test" />
             <stringArg name="apiVersion" arg="2.2" />
             <stringArg name="languageVersion" arg="2.2" />
           </stringArguments>
@@ -34,30 +35,22 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../../JavaMgScraper/app/build/classes/kotlin/main" />
+    <output-test url="file://$MODULE_DIR$/../../../JavaMgScraper/libscrape/build/classes/java/test" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../JavaMgScraper/app/src/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../../JavaMgScraper/app/src/main/kotlin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../JavaMgScraper/app/src/main/resources" type="java-resource" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../../JavaMgScraper/libscrape/src/test" />
     <orderEntry type="jdk" jdkName="temurin-21 (2)" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="JavaMgScraper.libscrape.main" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:2.2.20" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:33.4.6-jre" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-coroutines:5.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.22.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.13.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:2.2.21" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:failureaccess:1.0.3" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
     <orderEntry type="library" name="Gradle: org.jspecify:jspecify:1.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.errorprone:error_prone_annotations:2.41.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.j2objc:j2objc-annotations:3.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-jvm:5.3.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.20" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:23.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okio:okio-jvm:3.16.4" level="project" />
   </component>
+  <component name="TestModuleProperties" production-module="JavaMgScraper.libscrape.main" />
 </module>

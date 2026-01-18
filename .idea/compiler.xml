@@ -5,6 +5,9 @@
       <module name="JavaMgScraper.app" target="21" />
       <module name="JavaMgScraper.app.main" target="21" />
       <module name="JavaMgScraper.app.test" target="21" />
+      <module name="JavaMgScraper.libscrape" target="21" />
+      <module name="JavaMgScraper.libscrape.main" target="21" />
+      <module name="JavaMgScraper.libscrape.test" target="21" />
       <module name="JavaMgScraper.main" target="21" />
       <module name="JavaMgScraper.test" target="21" />
     </bytecodeTargetLevel>

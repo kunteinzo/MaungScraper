@@ -23,6 +23,7 @@ dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
     // implementation(fileTree("libs"))
+    api(project(":libscrape"))
     implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", "1.10.2")
     implementation("com.squareup.okhttp3", "okhttp", "5.3.2")
     implementation("com.squareup.okhttp3", "okhttp-coroutines", "5.3.2")
