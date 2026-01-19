@@ -10,6 +10,12 @@
       <module name="JavaMgScraper.libscrape.test" target="21" />
       <module name="JavaMgScraper.main" target="21" />
       <module name="JavaMgScraper.test" target="21" />
+      <module name="mg-scraper" target="21" />
+      <module name="mg-scraper-kt" target="21" />
+      <module name="mg-scraper-kt.main" target="21" />
+      <module name="mg-scraper-kt.test" target="21" />
+      <module name="mg-scraper.main" target="21" />
+      <module name="mg-scraper.test" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>
