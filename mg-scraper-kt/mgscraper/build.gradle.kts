@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("jvm") version "2.2.0"
     `java-library`
@@ -18,6 +20,9 @@ dependencies {
 
 kotlin {
     jvmToolchain(21)
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
 }
 
 group = "tz.kunteinzo.mg.scraper"

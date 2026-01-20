@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("jvm") version "2.2.0"
     application
@@ -21,6 +23,9 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(21)
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
 }
 application {
     mainClass = "com.kunteinzo.scraper.MainKt"
