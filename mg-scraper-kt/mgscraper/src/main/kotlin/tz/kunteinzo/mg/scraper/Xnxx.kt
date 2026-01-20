@@ -12,18 +12,15 @@ class Xnxx {
         private const val BASE_URL = "https://www.xnxx.com"
     }
 
+    fun req(url: String) = OkHttpClient.Builder().build().newCall(Request.Builder()
+        .url(url)
+        .addHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.32 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.32")
+        .build())
+
     suspend fun search(query: String) = coroutineScope {
         val xnxxResp = XnxxResponse()
         try {
-            OkHttpClient.Builder().build().newCall(
-                Request.Builder()
-                    .url("${BASE_URL}/search/$query")
-                    .addHeader(
-                        "User-Agent",
-                        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.32 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.32"
-                    )
-                    .build()
-            ).execute().use { resp ->
+            req("${BASE_URL}/search/$query").execute().use { resp ->
                 if (resp.isSuccessful) {
                     val array = arrayListOf<XnxxVideo>()
                     val root = Jsoup.parse(resp.body.string())
@@ -64,16 +61,7 @@ class Xnxx {
 
     suspend fun watch(link: String) = coroutineScope {
         try {
-            OkHttpClient.Builder().build()
-                .newCall(
-                    Request.Builder()
-                        .url("$BASE_URL$link")
-                        .addHeader(
-                            "User-Agent",
-                            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.32 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.32"
-                        )
-                        .build()
-                ).execute().use { resp ->
+            req("$BASE_URL$link").execute().use { resp ->
                     val root = Jsoup.parse(resp.body.string())
                     root.getElementsByTag("script").find { it.data().contains("VideoHLS") }?.data()?.let { player ->
                         "VideoHLS.*'".toRegex().find(player)?.value?.let { hls ->
