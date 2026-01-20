@@ -1,4 +1,6 @@
-package com.kunteinzo.scraper.models
+package tz.kunteinzo.mg.scraper.models
+
+import com.google.gson.annotations.SerializedName
 
 // TODO: finish this
 data class XnxxRelated(

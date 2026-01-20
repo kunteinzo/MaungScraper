@@ -1,4 +1,11 @@
-package com.kunteinzo.scraper
+package tz.kunteinzo.mg.scraper
+
+import tz.kunteinzo.mg.scraper.models.XnxxResponse
+import tz.kunteinzo.mg.scraper.models.XnxxVideo
+import kotlinx.coroutines.coroutineScope
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import org.jsoup.Jsoup
 
 class Xnxx {
     companion object {

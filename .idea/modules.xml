@@ -4,8 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MaungScraper.iml" filepath="$PROJECT_DIR$/MaungScraper.iml" />
       <module fileurl="file://$PROJECT_DIR$/mg-scraper-kt.iml" filepath="$PROJECT_DIR$/mg-scraper-kt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mg-scraper-kt.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mg-scraper-kt.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mg-scraper-kt.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mg-scraper-kt.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mg-scraper-kt.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mg-scraper-kt.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mg-scraper-kt.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mg-scraper-kt.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mg-scraper-kt.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mg-scraper-kt.app.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mgscraper/mg-scraper-kt.mgscraper.iml" filepath="$PROJECT_DIR$/.idea/modules/mgscraper/mg-scraper-kt.mgscraper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mgscraper/mg-scraper-kt.mgscraper.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mgscraper/mg-scraper-kt.mgscraper.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mgscraper/mg-scraper-kt.mgscraper.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mgscraper/mg-scraper-kt.mgscraper.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/mg-scraper-py/mg-scraper-py.iml" filepath="$PROJECT_DIR$/mg-scraper-py/mg-scraper-py.iml" />
     </modules>
   </component>

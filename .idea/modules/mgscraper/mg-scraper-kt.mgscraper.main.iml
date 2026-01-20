@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="mg-scraper-kt:main" external.linked.project.path="$MODULE_DIR$/../../mg-scraper-kt" external.root.project.path="$MODULE_DIR$/../../mg-scraper-kt" external.system.id="GRADLE" external.system.module.group="com.kunteinzo.scraper" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":mgscraper:main" external.linked.project.path="$MODULE_DIR$/../../../mg-scraper-kt/mgscraper" external.root.project.path="$MODULE_DIR$/../../../mg-scraper-kt" external.system.id="GRADLE" external.system.module.group="tz.kunteinzo.mg.scraper" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet external-system-id="GRADLE" type="kotlin-language" name="Kotlin">
-      <configuration version="5" platform="JVM 21" allPlatforms="JVM [21]" useProjectSettings="false" pureKotlinSourceFolders="$MODULE_DIR$/../../mg-scraper-kt/src/test/kotlin;/home/kunteinzo/IdeaProjects/MaungScraper/mg-scraper-kt/src/main/kotlin">
+      <configuration version="5" platform="JVM 21" allPlatforms="JVM [21]" useProjectSettings="false" pureKotlinSourceFolders="$MODULE_DIR$/../../../mg-scraper-kt/mgscraper/src/main/kotlin;/home/kunteinzo/IdeaProjects/MaungScraper/mg-scraper-kt/mgscraper/src/test/kotlin">
         <compilerSettings />
         <compilerArguments>
           <flagArguments>
@@ -11,9 +11,9 @@
             <flagArg name="noStdlib" arg="true" />
           </flagArguments>
           <stringArguments>
-            <stringArg name="destination" arg="$MODULE_DIR$/../../mg-scraper-kt/build/classes/kotlin/main" />
+            <stringArg name="destination" arg="$MODULE_DIR$/../../../mg-scraper-kt/mgscraper/build/classes/kotlin/main" />
             <stringArg name="jvmTarget" arg="21" />
-            <stringArg name="moduleName" arg="mg-scraper-kt" />
+            <stringArg name="moduleName" arg="mgscraper" />
             <stringArg name="apiVersion" arg="2.2" />
             <stringArg name="languageVersion" arg="2.2" />
           </stringArguments>
@@ -34,11 +34,10 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../mg-scraper-kt/build/classes/kotlin/main" />
+    <output url="file://$MODULE_DIR$/../../../mg-scraper-kt/mgscraper/build/classes/kotlin/main" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../mg-scraper-kt/src/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../mg-scraper-kt/src/main/kotlin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../mg-scraper-kt/src/main/resources" type="java-resource" />
+    <content url="file://$MODULE_DIR$/../../../mg-scraper-kt/mgscraper/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../mg-scraper-kt/mgscraper/src/main/kotlin" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="temurin-21 (2)" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />

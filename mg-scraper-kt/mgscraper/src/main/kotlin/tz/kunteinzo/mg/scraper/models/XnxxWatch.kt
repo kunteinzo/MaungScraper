@@ -1,4 +1,4 @@
-package com.kunteinzo.scraper.models
+package tz.kunteinzo.mg.scraper.models
 
 data class XnxxWatch(
     var title: String = "No Title"
