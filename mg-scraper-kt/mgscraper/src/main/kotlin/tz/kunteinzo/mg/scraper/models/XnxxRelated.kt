@@ -2,7 +2,6 @@ package tz.kunteinzo.mg.scraper.models
 
 import com.google.gson.annotations.SerializedName
 
-// TODO: finish this
 data class XnxxRelated(
     var id: Long,
     @SerializedName("t")
